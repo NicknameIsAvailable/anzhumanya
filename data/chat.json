@@ -1,0 +1,96 @@
+[
+    {
+        "id": "1",
+        "dateTime": "2024-05-28T10:30:00Z",
+        "fromUser": false,
+        "content": {
+            "text": "Here is your training plan for today!",
+            "embeddings": [
+                {
+                    "type": "train",
+                    "content": [
+                        {
+                            "id": "train1",
+                            "name": "Morning Workout",
+                            "description": "A series of exercises to kickstart your day.",
+                            "day": "monday",
+                            "steps": [
+                                {
+                                    "name": "Push Ups",
+                                    "description": "Standard push-ups.",
+                                    "reps": 10,
+                                    "sets": 3,
+                                    "restTime": 60
+                                },
+                                {
+                                    "name": "Squats",
+                                    "description": "Bodyweight squats.",
+                                    "reps": 15,
+                                    "sets": 3,
+                                    "restTime": 60
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "content": []
+                }
+            ]
+        }
+    },
+    {
+        "id": "2",
+        "dateTime": "2024-05-28T15:00:00Z",
+        "fromUser": true,
+        "content": {
+            "text": "Can I have a different workout plan for Wednesday?",
+            "embeddings": []
+        }
+    },
+    {
+        "id": "3",
+        "dateTime": "2024-05-29T08:00:00Z",
+        "fromUser": false,
+        "content": {
+            "text": "Sure, here is your workout plan for Wednesday.",
+            "embeddings": [
+                {
+                    "type": "train",
+                    "content": [
+                        {
+                            "id": "train2",
+                            "name": "Midweek Challenge",
+                            "description": "A challenging set of exercises for midweek.",
+                            "day": "wednesday",
+                            "steps": [
+                                {
+                                    "name": "Burpees",
+                                    "description": "Full-body exercise.",
+                                    "reps": 12,
+                                    "sets": 4,
+                                    "restTime": 90
+                                },
+                                {
+                                    "name": "Lunges",
+                                    "description": "Alternating lunges.",
+                                    "reps": 10,
+                                    "sets": 4,
+                                    "restTime": 60
+                                },
+                                {
+                                    "name": "Plank",
+                                    "description": "Hold plank position.",
+                                    "reps": 1,
+                                    "sets": 3,
+                                    "restTime": 60
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]
