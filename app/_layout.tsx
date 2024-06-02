@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font'
 import { useColorScheme } from 'react-native'
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { SplashScreen, Stack } from 'expo-router'
-import { PortalProvider, TamaguiProvider } from 'tamagui'
+import { PortalProvider, TamaguiProvider, Theme } from 'tamagui'
 import { config } from '../tamagui.config'
 import { ToastProvider } from '@tamagui/toast'
 
@@ -15,7 +15,7 @@ export {
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
+  initialRouteName: '/',
 }
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -46,17 +46,31 @@ function RootLayoutNav() {
 
   return (
     <TamaguiProvider config={config} defaultTheme={colorScheme as any}>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <ToastProvider swipeDirection="horizontal" duration={3000}>
-          <PortalProvider shouldAddRootHost>
-            <Stack>
-              <Stack.Screen
-                name="(tabs)"
-                options={{ headerShown: false }}
-              />
-            </Stack>
-          </PortalProvider>
-        </ToastProvider>
+      <ThemeProvider value={DefaultTheme}>
+        <Theme name="green">
+          <ToastProvider swipeDirection="horizontal" duration={3000}>
+            <PortalProvider shouldAddRootHost>
+                <Stack>
+                  <Stack.Screen
+                    name="(tabs)"
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="index"
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="(auth)"
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="(user-info)"
+                    options={{ headerShown: false }}
+                  />
+                </Stack>
+            </PortalProvider>
+          </ToastProvider>
+        </Theme>
       </ThemeProvider>
     </TamaguiProvider>
   )

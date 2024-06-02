@@ -1,5 +1,5 @@
 import React from 'react';
-import { H1, Separator, SizableText, Tabs, Text, ToggleGroup, View } from 'tamagui';
+import { H1, ScrollView, Separator, SizableText, Tabs, Text, ToggleGroup, View } from 'tamagui';
 import { IWeekDay } from '../model';
 import WeekTabsContent from './week-tabs-content';
 

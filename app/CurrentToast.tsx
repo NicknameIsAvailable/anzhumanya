@@ -1,5 +1,5 @@
 import { Toast, useToastController, useToastState } from '@tamagui/toast'
-import { Button, H4, XStack, YStack, isWeb } from 'tamagui'
+import { Button, H4, Theme, XStack, YStack, isWeb } from 'tamagui'
 
 export function CurrentToast() {
   const currentToast = useToastState()
@@ -16,7 +16,7 @@ export function CurrentToast() {
       exitStyle={{ opacity: 0, scale: 1, y: -20 }}
       animation="quick"
       viewportName={currentToast.viewportName}
-      theme="purple"
+      theme="green"
       br="$6"
     >
       <XStack ai="center" justifyContent='space-between' p="$2" gap="$2">
@@ -36,26 +36,28 @@ export function ToastControl() {
   const toast = useToastController()
 
   return (
-    <YStack gap="$2" ai="center">
-      <H4 col="$color1">Toast demo</H4>
-      <XStack gap="$2" jc="center">
-        <Button
-          onPress={() => {
-            toast.show('Successfully saved!', {
-              message: "Don't worry, we've got your data.",
-            })
-          }}
-        >
-          Show
-        </Button>
-        <Button
-          onPress={() => {
-            toast.hide()
-          }}
-        >
-          Hide
-        </Button>
-      </XStack>
-    </YStack>
+    <Theme name="green">
+      <YStack gap="$2" ai="center">
+          <H4 col="$color1">Toast demo</H4>
+          <XStack gap="$2" jc="center">
+            <Button
+              onPress={() => {
+                toast.show('Successfully saved!', {
+                  message: "Don't worry, we've got your data.",
+                })
+              }}
+            >
+              Show
+            </Button>
+            <Button
+              onPress={() => {
+                toast.hide()
+              }}
+            >
+              Hide
+            </Button>
+          </XStack>
+        </YStack>
+    </Theme>
   )
 }
